@@ -1,7 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addEmp, addEmpThunk } from '../store/slices/empresa.slice'
+import { addCat, addCatThunk } from '../store/slices/categoria.slice'
 
 const FomrCategory = ({empresa,setShowCat, showCat, createEmp}) => {
   
@@ -10,20 +11,25 @@ const FomrCategory = ({empresa,setShowCat, showCat, createEmp}) => {
     setShowCat(true)
     
   }
-  
-  const submit = data =>{
-    let {nombre, descripcion, empresaId }=data
-    empresaId=empresa.id
-    console.log(empresaId);
-    createEmp('/categorias',data)
-  }
-
   const dispatch=useDispatch()
 
-  const handleAddEmp =()=>{
-    
-    dispatch(addEmpThunk(data))
+  
+
+  const submit = data =>{
+    data.empresaId = empresa.id
+    console.log(data)
+    console.log('creando',data)
+    dispatch(addCatThunk(data))
+    reset({
+      nombre:'',
+      descripcion:'',
+      empresaId:'',
+  })
   }
+
+  
+
+ 
   return (
     <div className={`form-cat ${showCat && 'form_disable' }`}>
         <form  onSubmit={handleSubmit(submit)}>
@@ -31,7 +37,7 @@ const FomrCategory = ({empresa,setShowCat, showCat, createEmp}) => {
           <br />
         <span>Nombre<input {...register("nombre")} type="text" /></span>
         <span>Descripción<input {...register("descripcion")} type="text" /></span>
-        <button className="form__btn" onClick={handleAddEmp}>Submit</button>
+        <button className="form__btn" >Submit</button>
         </form>
         
         <button className='btn_x' onClick={limpiar}>X</button>
