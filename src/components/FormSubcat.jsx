@@ -9,7 +9,7 @@ const FormSubcat = ({categoria}) => {
     const submit = data =>{
         data.categoriumId=categoria.id
         dispatch(addSubcatThunk(data))
-        location.reload()
+
         reset({
             nombre:'',
         })
