@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { getSubcatThunk } from '../store/slices/subcategorias.slice'
 import { useDispatch } from 'react-redux'
 
-const Subcat = () => {
+const Subcat = ({subcategoria}) => {
 
     const dispatch = useDispatch()
 
@@ -12,7 +12,7 @@ const Subcat = () => {
     
 
   return (
-    <div>Subcat</div>
+    <div><span>{subcategoria.nombre}</span></div>
   )
 }
 

@@ -21,6 +21,7 @@ export const getSubcatThunk =()=>(dispatch)=>{
 }
 //crear subcategorias
 export const addSubcatThunk =(data)=>(dispatch)=>{
+    console.log(data)
     const url=`${baseUrl}`
     axios.post(url,data)
         .then(res=>dispatch(addSubcat(res.data)))

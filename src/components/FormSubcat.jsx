@@ -7,7 +7,7 @@ const FormSubcat = ({categoria}) => {
     const { handleSubmit, register, reset, formState: { errors } } = useForm()
     const dispatch = useDispatch()
     const submit = data =>{
-        data.categoriaId=categoria.id
+        data.categoriumId=categoria.id
         dispatch(addSubcatThunk(data))
     }
   return (

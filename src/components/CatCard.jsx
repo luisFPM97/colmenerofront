@@ -52,7 +52,18 @@ const CatCard = ({
         <FormSubcat
         categoria={categoria}
         />
-        <Subcat/>
+        <section>
+          {
+            subcategorias?.map((subcategoria)=>(
+              subcategoria.categoriumId === categoria.id ? (
+                <Subcat
+                key = {subcategoria.id}
+                subcategoria={subcategoria}
+                />
+              ) : null
+            ))
+          }
+        </section>
       </div>
     </div>
   );
