@@ -1,15 +1,19 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { addEmp, addEmpThunk } from '../store/slices/empresa.slice'
-import { addCat, addCatThunk } from '../store/slices/categoria.slice'
+
+import {addCatThunk } from '../store/slices/categoria.slice'
 
 const FomrCategory = ({empresa,setShowCat, showCat, createEmp}) => {
   
   const { handleSubmit, register, reset, formState: { errors } } = useForm()
   const limpiar =()=>{
     setShowCat(true)
-    
+    reset({
+      nombre:'',
+      descripcion:'',
+      empresaId:'',
+    })
   }
   const dispatch=useDispatch()
 
@@ -20,11 +24,12 @@ const FomrCategory = ({empresa,setShowCat, showCat, createEmp}) => {
     console.log(data)
     console.log('creando',data)
     dispatch(addCatThunk(data))
+    setShowCat(true)
     reset({
       nombre:'',
       descripcion:'',
       empresaId:'',
-  })
+    })
   }
 
   

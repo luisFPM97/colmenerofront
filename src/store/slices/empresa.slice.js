@@ -37,7 +37,6 @@ export const addEmpThunk = (data) =>(dispatch)=>{
 //eliminar empresa
 export const deleteEmpThunk = (id)=>(dispatch)=>{
     const url=`${baseUrl}/${id}`
-    console.log(url)
     axios.delete(url)
         .then(res=> {
             console.log(res.data)

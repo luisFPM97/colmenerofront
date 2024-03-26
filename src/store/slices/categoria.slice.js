@@ -10,7 +10,7 @@ const categoriaSlices = createSlice({
         setCat:(currentValue, action) => action.payload,
     }
 })
-export const {addCat, setCat}=categoriaSlices.actions;
+export const {addCat, setCat, removeCat}=categoriaSlices.actions;
 export default categoriaSlices.reducer
 
 const baseUrl = 'https://colmeneroback.onrender.com/categorias'
@@ -32,7 +32,6 @@ export const addCatThunk = (data)=>(dispatch)=>{
 //eliminar categoria
 export const deleteCatThunk = (id)=>(dispatch)=>{
     const url=`${baseUrl}/${id}`
-    console.log(url)
     axios.delete(url)
         .then(res=> {
             console.log(res.data)
