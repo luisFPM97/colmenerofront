@@ -55,7 +55,7 @@ const EmpCard = ({ empresa, setInfoUpdate, setIsEdit, setIsDisable, createEmp, i
                 setIsEditCat={setIsEditCat}
                 infoCat={infoCat}
             />
-            <div>
+            <div className='cont_cat'>
                 {categorias?.map((categoria) => (
                     categoria.empresaId === empresa.id ? (
                         <CatCard 

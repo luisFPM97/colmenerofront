@@ -127,10 +127,16 @@ input{
   justify-content: center;
   align-items: center;
 }
+.cont_cat{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 .infoCat{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 .cardCat{
   width: 100%;
