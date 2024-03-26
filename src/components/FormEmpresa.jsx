@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { addEmpThunk, updateEmpThunk } from '../store/slices/empresa.slice'
 
-const FormEmpresa = ({empresa, createEmp, infoUpdate, setInfoUpdate,setIsEdit, updateEmp, setIsDisable, isDisable, isEdit}) => {
+const FormEmpresa = ({infoUpdate, setInfoUpdate, setIsDisable, isDisable, isEdit}) => {
 
     const dispatch = useDispatch()
-
+    console.log(infoUpdate)
     const { handleSubmit, register, reset, formState: { errors } } = useForm()
     useEffect(() => {
       reset(infoUpdate)

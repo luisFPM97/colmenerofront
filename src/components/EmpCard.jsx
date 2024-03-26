@@ -6,7 +6,7 @@ import { addEmpThunk, deleteEmpThunk } from '../store/slices/empresa.slice'
 import { getCatThunk } from '../store/slices/categoria.slice'
 import CatCard from './CatCard'
 
-const EmpCard = ({ empresa, deleteEmp, setInfoUpdate, setIsEdit, setIsDisable, isDisable, createEmp, InfoUpdate }) => {
+const EmpCard = ({ empresa, setInfoUpdate, setIsEdit, setIsDisable, createEmp, isEditCat, setIsEditCat,infoCat, setInfoCat }) => {
 
     const dispatch = useDispatch()
     const categorias = useSelector(store => store.categorias)
@@ -28,6 +28,7 @@ const EmpCard = ({ empresa, deleteEmp, setInfoUpdate, setIsEdit, setIsDisable, i
         setIsDisable(false)
     }
     const addCat = () => {
+        setIsEditCat(false)
         setShowCat(false)
     }
     return (
@@ -49,11 +50,21 @@ const EmpCard = ({ empresa, deleteEmp, setInfoUpdate, setIsEdit, setIsDisable, i
                 setShowCat={setShowCat}
                 showCat={showCat}
                 createEmp={createEmp}
+                isEditCat={isEditCat}
+                setIsEditCat={setIsEditCat}
+                infoCat={infoCat}
             />
             <div>
                 {categorias?.map((categoria) => (
                     categoria.empresaId === empresa.id ? (
-                        <CatCard key={categoria.id} categoria={categoria} />
+                        <CatCard 
+                        key={categoria.id} 
+                        categoria={categoria}
+                        isEditCat={isEditCat}
+                        setIsEditCat={setIsEditCat}
+                        setShowCat={setShowCat}
+                        setInfoCat={setInfoCat}
+                         />
                     ) : null
                 ))}
             </div>

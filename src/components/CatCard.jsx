@@ -2,12 +2,20 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteCatThunk } from "../store/slices/categoria.slice";
 
-const CatCard = ({ categoria }) => {
+const CatCard = ({ categoria, isEditCat, setIsEditCat, setShowCat, setInfoCat }) => {
 
     const dispatch = useDispatch()
 
     const handleDelete = () =>{
         dispatch(deleteCatThunk(categoria.id))
+    }
+
+    
+
+    const handleEdit = () => {
+        setIsEditCat(true)
+        setShowCat(false)
+        setInfoCat(categoria)
     }
 
   return (
@@ -17,6 +25,7 @@ const CatCard = ({ categoria }) => {
       <span>{categoria.descripcion}</span>
       <span>{categoria.empresaId}</span>
       <button onClick={handleDelete}>eliminar</button>
+      <button onClick={handleEdit}>actualizar</button>
     </div>
   );
 };

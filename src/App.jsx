@@ -12,6 +12,8 @@ function App() {
   const [infoUpdate, setInfoUpdate] = useState()
   const[isDisable, setIsDisable] = useState(true)
   const [isEdit, setIsEdit] = useState(true)
+  const [isEditCat, setIsEditCat] = useState(true)
+  const [infoCat,setInfoCat]=useState(true)
   const url= 'https://colmeneroback.onrender.com'
   const [  getEmp, createEmp, deleteEmp, updateEmp]= empCrud(url)
 
@@ -63,6 +65,10 @@ function App() {
             setIsDisable={setIsDisable}
             isDisable={isDisable}
             createEmp = {createEmp}
+            isEditCat={isEditCat}
+            setIsEditCat={setIsEditCat}
+            infoCat={infoCat}
+            setInfoCat={setInfoCat}
             />
           ))
         }
