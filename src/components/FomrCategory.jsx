@@ -8,6 +8,7 @@ const FomrCategory = ({ empresa, setShowCat, showCat, isEditCat, setIsEditCat, i
 
   const { handleSubmit, register, reset, formState: { errors } } = useForm()
 
+
   useEffect(() => {
     reset({
       id: infoCat.id,
@@ -20,6 +21,7 @@ const FomrCategory = ({ empresa, setShowCat, showCat, isEditCat, setIsEditCat, i
 
   const limpiar = () => {
     setShowCat(true)
+    location.reload()
     reset({
       nombre: '',
       descripcion: '',

@@ -16,6 +16,7 @@ const CatCard = ({ categoria, isEditCat, setIsEditCat, setShowCat, setInfoCat })
         setIsEditCat(true)
         setShowCat(false)
         setInfoCat(categoria)
+        console.log(setInfoCat)
     }
 
   return (

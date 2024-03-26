@@ -26,13 +26,14 @@ function App() {
     dispatch(getEmpThunk())
   }, [])
   
-  console.log(empresas)
+
   const changeDisable =()=>{
     if (isDisable){
       setIsDisable(false)
       setIsEdit(false)
     }else{
       setIsDisable(true)
+      setIsEdit(true)
     }
   }
   

@@ -7,10 +7,18 @@ import { addEmpThunk, updateEmpThunk } from '../store/slices/empresa.slice'
 const FormEmpresa = ({infoUpdate, setInfoUpdate, setIsDisable, isDisable, isEdit}) => {
 
     const dispatch = useDispatch()
-    console.log(infoUpdate)
     const { handleSubmit, register, reset, formState: { errors } } = useForm()
     useEffect(() => {
-      reset(infoUpdate)
+      if (isEdit) {
+        reset(infoUpdate)
+      } else {
+        reset({
+            nombre:'',
+            mision:'',
+            vision:'',
+            eslogan:'',
+        })
+      }
     }, [infoUpdate])
     let idd = '';
     if (isEdit) {
@@ -20,6 +28,7 @@ const FormEmpresa = ({infoUpdate, setInfoUpdate, setIsDisable, isDisable, isEdit
     }
     const limpiar =()=>{
         setIsDisable(true)
+        location.reload()
         reset({
             nombre:'',
             mision:'',
