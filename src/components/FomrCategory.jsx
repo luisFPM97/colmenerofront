@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-
 import { UpdateCatThunk, addCatThunk } from '../store/slices/categoria.slice'
 
 const FomrCategory = ({ empresa, setShowCat, showCat, isEditCat, setIsEditCat, infoCat }) => {

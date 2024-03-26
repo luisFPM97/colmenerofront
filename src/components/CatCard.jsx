@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteCatThunk, getCatThunk } from "../store/slices/categoria.slice";
+import Subcat from "./Subcat";
+import { getSubcatThunk } from "../store/slices/subcategorias.slice";
+import FormSubcat from "./FormSubcat";
 
 const CatCard = ({
   categoria,
@@ -10,9 +13,14 @@ const CatCard = ({
   setInfoCat,
 }) => {
 
+  const subcategorias = useSelector(store => store.subcategorias)
+
   useEffect(() => {
     dispatch(getCatThunk())
+    dispatch(getSubcatThunk())
 }, [])
+
+
 
   const dispatch = useDispatch();
 
@@ -24,7 +32,7 @@ const CatCard = ({
     setIsEditCat(true);
     setShowCat(false);
     setInfoCat(categoria);
-    console.log(setInfoCat);
+
   };
 
   return (
@@ -39,10 +47,12 @@ const CatCard = ({
           <i className="fa-solid fa-pen-to-square"></i>
         </button>
       </div>
+      <button>Agregar subcategoria</button>
       <div>
-        <b>
-          <span>beneficios</span>
-        </b>
+        <FormSubcat
+        categoria={categoria}
+        />
+        <Subcat/>
       </div>
     </div>
   );

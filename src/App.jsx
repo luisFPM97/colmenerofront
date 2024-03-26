@@ -21,7 +21,7 @@ function App() {
   const dispatch = useDispatch()
 
   const empresas =useSelector(store =>store.empresas)
-
+  console.log(empresas)
 
   useEffect(() => {
     dispatch(getEmpThunk())
