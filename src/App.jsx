@@ -14,13 +14,14 @@ function App() {
   const [isEdit, setIsEdit] = useState(true)
   const [isEditCat, setIsEditCat] = useState(true)
   const [infoCat,setInfoCat]=useState(true)
-  const url= 'https://colmeneroback.onrender.com'
+  const url= 'https://colmeneroback-dev-bxzc.1.us-1.fl0.io'
   const [  getEmp, createEmp, deleteEmp, updateEmp]= empCrud(url)
 
 
   const dispatch = useDispatch()
 
   const empresas =useSelector(store =>store.empresas)
+
 
   useEffect(() => {
     dispatch(getEmpThunk())
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <div className="colmenero-app">
-      <h1 className="title">Empresa CRUD</h1>
+      <h1 className="title">Aministrar contenido</h1>
       <button className='btn3' onClick={changeDisable}>Agregar empresa</button>
       <FormEmpresa
       createEmp = {createEmp}

@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { deleteCatThunk } from "../store/slices/categoria.slice";
+import { deleteCatThunk, getCatThunk } from "../store/slices/categoria.slice";
 
-const CatCard = ({ categoria, isEditCat, setIsEditCat, setShowCat, setInfoCat }) => {
+const CatCard = ({
+  categoria,
+  isEditCat,
+  setIsEditCat,
+  setShowCat,
+  setInfoCat,
+}) => {
 
-    const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getCatThunk())
+}, [])
 
-    const handleDelete = () =>{
-        dispatch(deleteCatThunk(categoria.id))
-    }
+  const dispatch = useDispatch();
 
-    
+  const handleDelete = () => {
+    dispatch(deleteCatThunk(categoria.id));
+  };
 
-    const handleEdit = () => {
-        setIsEditCat(true)
-        setShowCat(false)
-        setInfoCat(categoria)
-        console.log(setInfoCat)
-    }
+  const handleEdit = () => {
+    setIsEditCat(true);
+    setShowCat(false);
+    setInfoCat(categoria);
+    console.log(setInfoCat);
+  };
 
   return (
-    <div>
-      <span>{categoria.id}</span>
-      <span>{categoria.nombre}</span>
-      <span>{categoria.descripcion}</span>
-      <span>{categoria.empresaId}</span>
-      <button onClick={handleDelete}>eliminar</button>
-      <button onClick={handleEdit}>actualizar</button>
+    <div className="infoCat">
+      <div className="cardCat">
+        <span className="nameCat">{categoria.nombre}</span>
+        <span className="desCat">{categoria.descripcion}</span>
+        <button className="btnCat" onClick={handleDelete}>
+          <i className="fa-solid fa-trash"></i>
+        </button>
+        <button className="btnCat" onClick={handleEdit}>
+          <i className="fa-solid fa-pen-to-square"></i>
+        </button>
+      </div>
+      <div>
+        <b>
+          <span>beneficios</span>
+        </b>
+      </div>
     </div>
   );
 };

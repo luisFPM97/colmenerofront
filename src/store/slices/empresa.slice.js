@@ -17,7 +17,7 @@ const empresaSlices = createSlice({
 export const {addEmp, removeEmp, setEmp, updateEmp}=empresaSlices.actions;
 export default empresaSlices.reducer
 
-const baseUrl = 'https://colmeneroback.onrender.com/empresas'
+const baseUrl = 'https://colmeneroback-dev-bxzc.1.us-1.fl0.io/empresas'
 
 //obtener empresas
 export const getEmpThunk = ()=> (dispatch) =>{

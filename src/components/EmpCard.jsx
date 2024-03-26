@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FomrCategory from './FomrCategory'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { addEmpThunk, deleteEmpThunk } from '../store/slices/empresa.slice'
+import { addEmpThunk, deleteEmpThunk, getEmpThunk } from '../store/slices/empresa.slice'
 import { getCatThunk } from '../store/slices/categoria.slice'
 import CatCard from './CatCard'
 
@@ -13,6 +13,7 @@ const EmpCard = ({ empresa, setInfoUpdate, setIsEdit, setIsDisable, createEmp, i
     const [showCat, setShowCat] = useState(true)
 
     useEffect(() => {
+
         dispatch(getCatThunk())
     }, [])
     
@@ -34,14 +35,14 @@ const EmpCard = ({ empresa, setInfoUpdate, setIsEdit, setIsDisable, createEmp, i
     return (
         <div className="emp">
             <section className="empresa_cont">
-                <div><span>Nombre de la empresa: </span><b><p>{empresa.nombre}</p></b></div>
-                <span>Mision</span><b><p>{empresa.mision}</p></b>
+                <div><span>Nombre de la empresa: </span><b><p className='nameEmp'>{empresa.nombre}</p></b></div>
+                <span>Mision</span><b><p >{empresa.mision}</p></b>
                 <span>Vision</span><b><p>{empresa.vision}</p></b>
                 <span>Eslogan</span><b><p>{empresa.eslogan}</p></b>
             </section>
             <div className='btns'>
-                <button className='btn2' onClick={handleDelete}><i class="fa-solid fa-trash"></i></button>
-                <button className='btn2' onClick={handleEdit}><i class="fa-solid fa-pen-to-square"></i></button>
+                <button className='btn2' onClick={handleDelete}><i className="fa-solid fa-trash"></i></button>
+                <button className='btn2' onClick={handleEdit}><i className="fa-solid fa-pen-to-square"></i></button>
             </div>
 
             <button className='btn3' onClick={addCat}>Agregar categoria</button>

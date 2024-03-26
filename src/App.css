@@ -87,6 +87,14 @@ input{
 .empresa_cont{
   width:  80%;
 }
+.nameEmp{
+  font-size: 35px;
+}
+.btns{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 .btn2, .btn1{
   height: 50px;
   aspect-ratio: 1;
@@ -118,4 +126,34 @@ input{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.infoCat{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardCat{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardCat:hover{
+  box-shadow: 0px 0px 5px white;
+}
+.btnCat{
+  width: 4%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+}
+.nameCat{
+  width: 10%;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: left;
+  margin-left: 5px;
+}
+.desCat{
+  width: 86%;
 }
