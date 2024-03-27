@@ -17,12 +17,10 @@ const FormDescript = ({subcategoria}) => {
     }
     
   return (
-    <div>
-        <form action="" onSubmit={handleSubmit(submit)}>
+        <form className='formSubcat' action="" onSubmit={handleSubmit(submit)}>
             <input {...register("descripcion")}  type="text" placeholder={subcategoria.nombre}/>
             <button>agregar</button>
         </form>
-    </div>
   )
 }
 

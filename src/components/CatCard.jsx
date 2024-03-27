@@ -12,15 +12,12 @@ const CatCard = ({
   setShowCat,
   setInfoCat,
 }) => {
-
-  const subcategorias = useSelector(store => store.subcategorias)
+  const subcategorias = useSelector((store) => store.subcategorias);
 
   useEffect(() => {
-    dispatch(getCatThunk())
-    dispatch(getSubcatThunk())
-}, [])
-
-
+    dispatch(getCatThunk());
+    dispatch(getSubcatThunk());
+  }, []);
 
   const dispatch = useDispatch();
 
@@ -32,7 +29,6 @@ const CatCard = ({
     setIsEditCat(true);
     setShowCat(false);
     setInfoCat(categoria);
-
   };
 
   return (
@@ -40,31 +36,24 @@ const CatCard = ({
       <div className="cardCat">
         <span className="nameCat">{categoria.nombre}</span>
         <span className="desCat">{categoria.descripcion}</span>
-        <button className="btnCat" onClick={handleDelete}>
-          <i className="fa-solid fa-trash"></i>
-        </button>
-        <button className="btnCat" onClick={handleEdit}>
-          <i className="fa-solid fa-pen-to-square"></i>
-        </button>
+        <div className="btnsCat">
+          <button className="btnCat dll" onClick={handleDelete}>
+            <i className="fa-solid fa-trash"></i>
+          </button>
+          <button className="btnCat edit" onClick={handleEdit}>
+            <i className="fa-solid fa-pen-to-square"></i>
+          </button>
+        </div>
       </div>
-      <button>Agregar subcategoria</button>
-      <div>
-        <FormSubcat
-        categoria={categoria}
-        />
-        <section>
-          {
-            subcategorias?.map((subcategoria)=>(
-              subcategoria.categoriumId === categoria.id ? (
-                <Subcat
-                key = {subcategoria.id}
-                subcategoria={subcategoria}
-                />
-              ) : null
-            ))
-          }
+      <button className="addCategory">Agregar subcategoria</button>
+      <FormSubcat categoria={categoria} />
+        <section className="listasubcat">
+          {subcategorias?.map((subcategoria) =>
+            subcategoria.categoriumId === categoria.id ? (
+              <Subcat key={subcategoria.id} subcategoria={subcategoria} />
+            ) : null
+          )}
         </section>
-      </div>
     </div>
   );
 };

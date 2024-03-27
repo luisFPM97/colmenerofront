@@ -9,7 +9,6 @@ const Subcat = ({subcategoria}) => {
 
     const dispatch = useDispatch()
     const descripciones = useSelector(store => store.descripciones)
-    console.log(descripciones)
     useEffect(() => {
         dispatch(getDescThunk())
         dispatch(getSubcatThunk())
@@ -22,14 +21,14 @@ const Subcat = ({subcategoria}) => {
     <div>
         <div>
         <span>{subcategoria.nombre}</span>
-        <button onClick={handleDelete}>X</button>
-        <button><i className="fa-solid fa-pen-to-square"></i></button>
+        <button className='btnCat dll' onClick={handleDelete}>X</button>
+        <button className='btnCat edit'><i className="fa-solid fa-pen-to-square"></i></button>
         </div>
         <span>agregar {subcategoria.nombre}</span>
         <FormDescript
         subcategoria={subcategoria}
         />
-        <section>
+        <section className='listdescripcion'>
             {
                 descripciones?.map((descripcion)=>(
                     descripcion.subcategoriumId === subcategoria.id ?(

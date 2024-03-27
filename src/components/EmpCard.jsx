@@ -42,10 +42,10 @@ const EmpCard = ({ empresa, setInfoUpdate, setIsEdit, setIsDisable, createEmp, i
             </section>
             <div className='btns'>
                 <button className='btn2' onClick={handleDelete}><i className="fa-solid fa-trash"></i></button>
-                <button className='btn2' onClick={handleEdit}><i className="fa-solid fa-pen-to-square"></i></button>
+                <button className='btn4' onClick={handleEdit}><i className="fa-solid fa-pen-to-square"></i></button>
             </div>
-
             <button className='btn3' onClick={addCat}>Agregar categoria</button>
+            <br /><br />
             <FomrCategory
                 empresa={empresa}
                 setShowCat={setShowCat}

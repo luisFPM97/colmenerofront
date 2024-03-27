@@ -1,8 +1,18 @@
 #root {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
   text-align: center;
+  color: black;
+  background-color: #f2d8c6;
+}
+input{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
 }
 .colmenero-app{
   display: flex;
@@ -35,14 +45,18 @@
   border: none;
   background-color: transparent;
   box-shadow: 0px 0px 20px white;
+  background-color: red;
 }
 button{
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 1;
   color: white;
+  border: none;
+  margin: 5px;
 }
 button:hover{
-  opacity: 1;
+  opacity: 0.8;
+  box-shadow: 0px 0px 10px yellow;
 }
 .btn1{
   position: absolute;
@@ -65,13 +79,14 @@ input{
   width: 90%;
   height: auto;
 }
-
-
 .form_disable{
   visibility: hidden;
 }
 .empresas-container{
   width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .emp{
   display: flex;
@@ -81,21 +96,33 @@ input{
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border: 1px solid black;
   position: relative;
 }
+
 .empresa_cont{
-  width:  80%;
+  width:  100%;
+  margin-top: 100px;
 }
 .nameEmp{
   font-size: 35px;
 }
 .btns{
+  display: flex;
+  flex-direction: column;
   position: absolute;
+  z-index: 999;
   top: 5px;
   right: 5px;
+  gap: 5px;
 }
-.btn2, .btn1{
+.btn2{
+  background-color: red;
+}
+.btn4{
+  background-color: white;
+  color: black;
+}
+.btn2, .btn1, .btn4{
   height: 50px;
   aspect-ratio: 1;
   border-radius: 25px;
@@ -104,6 +131,8 @@ input{
 }
 .btn3{
   width: 100px;
+  color: black;
+  font-weight: bold;
 }
 .form-cat{
   position: fixed;
@@ -128,38 +157,80 @@ input{
   align-items: center;
 }
 .cont_cat{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 80px;
 }
 .infoCat{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
+  align-items: center;
+  width: 500px;
+  border-radius: 35px;
+  gap: 10px;
+  background-color: #fdd06c;
+  color: black;
 }
 .cardCat{
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  width: 90%;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 5px;
 }
-.cardCat:hover{
-  box-shadow: 0px 0px 5px white;
+.nameCat{
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 20px;
+}
+.desCat{
+  color: rgb(178, 122, 11);
+  font-weight: bold;
+}
+
+
+/*configuracion botones*/
+.btnsCat{
+  display: flex;
+  gap: 5px;
 }
 .btnCat{
-  width: 4%;
+  height: 40px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
 }
-.nameCat{
-  width: 10%;
-  font-weight: bold;
-  font-size: 25px;
-  text-align: left;
-  margin-left: 5px;
+.dll{
+  background-color: red;
 }
-.desCat{
-  width: 86%;
+.edit{
+  background-color: white;
+  color: black;
+}
+.addCategory{
+  width: 150px;
+  height: 30px;
+}
+/**/
+.formSubcat{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listasubcat{
+  width: 90%;
+}
+.listdescripcion{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.descripcion{
+  display: flex;
+  align-items: center;
 }
