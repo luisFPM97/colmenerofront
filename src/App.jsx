@@ -14,7 +14,7 @@ function App() {
   const [isEdit, setIsEdit] = useState(true)
   const [isEditCat, setIsEditCat] = useState(true)
   const [infoCat,setInfoCat]=useState(true)
-  const url= 'https://colmeneroback-dev-bxzc.1.us-1.fl0.io'
+  const url= 'https://colmeneroback.onrender.com'
   const [  getEmp, createEmp, deleteEmp, updateEmp]= empCrud(url)
 
 

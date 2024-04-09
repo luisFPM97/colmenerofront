@@ -16,7 +16,7 @@ const descripcionSlicesa = createSlice({
 })
 export const {setDesc, addDesc, removeDesc, updateDesc}= descripcionSlicesa.actions;
 export default descripcionSlicesa.reducer
-const baseUrl = 'https://colmeneroback-dev-bxzc.1.us-1.fl0.io/descripts'
+const baseUrl = 'https://colmeneroback.onrender.com/descripts'
 //obtener subcategorias
 export const getDescThunk =()=>(dispatch)=>{
     const url=`${baseUrl}`

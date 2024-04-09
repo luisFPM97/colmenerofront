@@ -17,7 +17,7 @@ const categoriaSlices = createSlice({
 export const {addCat, setCat, removeCat, updateCat}=categoriaSlices.actions;
 export default categoriaSlices.reducer
 
-const baseUrl = 'https://colmeneroback-dev-bxzc.1.us-1.fl0.io/categorias'
+const baseUrl = 'https://colmeneroback.onrender.com/categorias'
 
 //obtener categorias
 export const getCatThunk =()=>(dispatch)=>{

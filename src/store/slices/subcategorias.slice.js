@@ -16,7 +16,7 @@ const subcategoriaSlices = createSlice({
 })
 export const {setSubcat, addSubcat, removeSubcat, updateSubcat}=subcategoriaSlices.actions;
 export default subcategoriaSlices.reducer
-const baseUrl = 'https://colmeneroback-dev-bxzc.1.us-1.fl0.io/subcategorias'
+const baseUrl = 'https://colmeneroback.onrender.com/subcategorias'
 //obtener subcategorias
 export const getSubcatThunk =()=>(dispatch)=>{
     const url=`${baseUrl}`
