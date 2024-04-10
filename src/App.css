@@ -1,3 +1,10 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; /* Add a default font family */
+}
+
 #root {
   width: 90%;
   margin: 0 auto;
@@ -9,60 +16,68 @@
   color: black;
   background-color: #f2d8c6;
 }
-input{
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid black;
-}
-.colmenero-app{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-.cardempresa{
-  display: flex;
-  flex-direction: column;
-}
-.form-emp{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  flex-direction: column;
-}
-.form__btn{
-  width: 60px;
-}
-.form__x{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: none;
-  background-color: transparent;
-  box-shadow: 0px 0px 20px white;
-  background-color: red;
-}
-button{
+
+/* Buttons */
+button {
   cursor: pointer;
   opacity: 1;
   color: black;
   border: none;
   margin: 5px;
-
 }
-button:hover{
+
+button:hover {
   opacity: 0.8;
   box-shadow: 0px 0px 30px yellow;
 }
-.btn1{
-  position: absolute;
+
+.btn1,
+.btn2,
+.btn3,
+.btn4,
+.btnCat,
+.dll,
+.edit {
+  height: 40px; /* Set a default button height */
+  aspect-ratio: 1;
+  border-radius: 25px; /* Set a default button border radius */
+  border: none;
 }
-.form{
+
+.btn1,
+.btn2,
+.btn4 {
+  /* Specific styles for buttons 1, 2, and 4 */
+  background-color: red; /* Set default color for buttons 1, 2, and 4 */
+  box-shadow: 0px 0px 30px black;
+}
+
+.btn2 {
+  background-color: red; /* Override default color for button 2 */
+}
+
+.btn3 {
+  width: 100px;
+  color: black;
+  font-weight: bold;
+}
+
+.btn4,
+.edit {
+  background-color: white; /* Set default color for buttons 4 and edit */
+  color: black;
+}
+
+.dll {
+  background-color: red; /* Override default color for dll button */
+}
+
+/*.btnCat {
+  /* Specific styles for category buttons 
+}
+
+/* Forms */
+.form {
   width: 50%;
   padding: 30px;
   position: fixed;
@@ -76,21 +91,79 @@ button:hover{
   align-items: center;
   gap: 10px;
 }
-input{
-  width: 90%;
-  height: auto;
-}
-.form_disable{
+
+.form_disable {
   visibility: hidden;
 }
-.empresas-container{
+
+.form-cat {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  z-index: 999;
+  background-color: black;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.form-emp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  flex-direction: column;
+}
+
+.form__btn {
+  width: 60px;
+}
+
+.form__x,
+.btn_x {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  box-shadow: 0px 0px 20px white;
+}
+
+.form__x {
+  background-color: red; /* Set default color for form close button */
+}
+
+.btn_x {
+  background-color: black; /* Set default color for category form close button */
+}
+
+input {
+  width: 90%;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+/* Layout */
+.colmenero-app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.empresas-container {
   width: 100% !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.emp{
+
+.emp {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -101,14 +174,16 @@ input{
   position: relative;
 }
 
-.empresa_cont{
-  width:  100%;
+.empresa_cont {
+  width: 100%;
   margin-top: 100px;
 }
-.nameEmp{
+
+.nameEmp {
   font-size: 35px;
 }
-.btns{
+
+.btns {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -117,54 +192,21 @@ input{
   right: 5px;
   gap: 5px;
 }
-.btn2{
-  background-color: red;
-}
-.btn4{
-  background-color: white;
-  color: black;
-}
-.btn2, .btn1, .btn4{
-  height: 50px;
-  aspect-ratio: 1;
-  border-radius: 25px;
-  border: none;
-  box-shadow: 0px 0px 30px black;
-}
-.btn3{
-  width: 100px;
-  color: black;
-  font-weight: bold;
-}
-.form-cat{
-  position: fixed;
-  top: 20%;
-  left: 30%;
-  z-index: 999;
-  background-color: black;
-  padding: 30px;
-  border-radius: 25px;
-}
-.btn_x{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 20px;
-  border-radius: 50%;
-  border: none;
-  width: 30px;
-  aspect-ratio: 1;
+
+.cardempresa {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
-.cont_cat{
+
+/* Categorías */
+.cont_cat {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 80px;
 }
-.infoCat{
+
+.infoCat {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,7 +216,8 @@ input{
   background-color: #fdd06c;
   color: black;
 }
-.cardCat{
+
+.cardCat {
   display: flex;
   width: 90%;
   justify-content: center;
@@ -182,57 +225,49 @@ input{
   flex-direction: column;
   gap: 5px;
 }
-.nameCat{
+
+.nameCat {
   font-weight: bold;
   font-size: 30px;
   padding-top: 20px;
 }
-.desCat{
+
+.desCat {
   color: rgb(178, 122, 11);
   font-weight: bold;
 }
 
-
-/*configuracion botones*/
-.btnsCat{
+.btnsCat {
   display: flex;
   gap: 5px;
 }
-.btnCat{
-  height: 40px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: none;
-}
-.dll{
-  background-color: red;
-}
-.edit{
-  background-color: white;
-  color: black;
-}
-.addCategory{
+
+.addCategory {
   width: 150px;
   height: 30px;
 }
-/**/
-.formSubcat{
+
+/* Subcategorías */
+.formSubcat {
   width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.listasubcat{
+
+.listasubcat {
   width: 90%;
 }
-.listdescripcion{
+
+.listdescripcion {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding-bottom: 20px;
   padding-top: 20px;
 }
-.descripcion{
+
+.descripcion {
   display: flex;
   align-items: center;
 }
